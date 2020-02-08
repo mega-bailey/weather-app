@@ -1,0 +1,133 @@
+$color-primary: #244577;
+$color-secondary: #1a75b3;
+$blue: rgb(5, 6, 53);
+$orange: rgb(238, 167, 69);
+$light-blue: rgb(91, 129, 243);
+$pink: rgb(245, 122, 143);
+$navy: rgb(5, 12, 56);
+$color-white: #fff;
+$color-black: #000;
+
+$font-primary: 'Lato', sans-serif;
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; //1rem = 10px (10/16 browser default)
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: $color-primary;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  background: linear-gradient(45deg, $blue 0%, rgba($color-secondary, 0) 70%),
+    linear-gradient(135deg, $light-blue 10%, rgba($color-secondary, 0) 80%),
+    linear-gradient(225deg, rgba($pink, 1) 10%, rgba($color-secondary, 0) 80%),
+    linear-gradient(315deg, $orange 100%, rgba($color-secondary, 0) 70%);
+  font-family: $font-primary;
+  color: $navy;
+  letter-spacing: 1.5px;
+}
+
+.container {
+  min-width: 60rem;
+  background-color: rgba($color-white, 0.4);
+  padding: 2rem;
+  border-radius: 7px;
+}
+
+.header {
+  padding: 2rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid $navy;
+}
+
+.temp-btn {
+  font-size: 1.5rem;
+  font-weight: 300;
+  cursor: pointer;
+}
+
+.location {
+  &--timezone {
+    font-size: 1.8rem;
+    font-weight: 300;
+  }
+}
+
+.main-details {
+  &--container {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 2rem;
+  }
+  &__left {
+    display: flex;
+    flex-direction: column;
+  }
+  &__right {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-right: 8rem;
+  }
+}
+
+.temp {
+  &--container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  &--degree {
+    font-weight: normal;
+    font-size: 5rem;
+  }
+  &--scale {
+    margin-left: 5px;
+    font-size: 3rem;
+  }
+  &--desc {
+    font-size: 2rem;
+  }
+}
+
+.desc-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 3rem;
+}
+
+.add-details {
+  &--container {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+  }
+}
+
+.attribute {
+  padding: 1rem;
+  position: fixed;
+  bottom: 0;
+}
+
+//ICONS
+.icon {
+  margin: 1rem;
+  height: 5rem;
+  width: 5rem;
+}

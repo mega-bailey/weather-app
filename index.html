@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="dist/css/main.min.css" />
+    <title>Weather App</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1 class="location--timezone">Timezone</h1>
+        <span class="temp-btn">˚Far | ˚Cel</span>
+      </div>
+
+      <div class="main-details--container">
+        <div class="main-details__left">
+          <p class="date">Date</p>
+          <p class="time">Time</p>
+          <p class="temp--desc">Very cold</p>
+        </div>
+        <div class="main-details__right">
+          <!-- <canvas class="icon" width="90" height="90"></canvas> -->
+          <div class="icon">
+            <img
+              src="icons/weathercock.svg"
+              alt="weathervane"
+            />
+          </div>
+          <h2 class="temp--degree">34</h2>
+          <span class="temp--scale">˚F</span>
+        </div>
+      </div>
+
+      <!-- <div class="desc-container">
+        <canvas class="icon" width="90" height="90"></canvas>
+        <div class="temp--desc">Very cold</div>
+      </div> -->
+
+      <div class="add-details--container">
+        <div class="add-details__wind">Wind:</div>
+        <div class="add-details__humidity">Humidity:</div>
+        <div class="add-details__pressure">Pressure:</div>
+        <div class="add-details__uv">UV Index:</div>
+      </div>
+    </div>
+    <div class="attribute">
+      Icons made by
+      <a
+        href="https://www.flaticon.com/authors/vitaly-gorbachev"
+        title="Vitaly Gorbachev"
+        >Vitaly Gorbachev</a
+      >
+      from
+      <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
+    </div>
+    <script src="skycons.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
