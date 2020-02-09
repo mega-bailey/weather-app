@@ -183,3 +183,72 @@ body {
   position: fixed;
   bottom: 0;
 }
+
+//MEDIA QUERIES
+@media only screen and (max-width: 770px) {
+  html {
+    font-size: 56.25%;
+  }
+  .main-details {
+    &--container {
+      min-width: 40rem;
+      display: flex;
+      justify-content: space-between;
+      margin: 2rem 2rem;
+    }
+  }
+  .container {
+    padding: 1rem;
+  }
+  .header {
+    padding: 1rem 2rem;
+  }
+}
+@media only screen and (max-width: 540px) {
+  html {
+    font-size: 50%;
+  }
+}
+
+@media only screen and (max-width: 485px) {
+  html {
+    font-size: 43.75%;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .container {
+    min-width: 20rem;
+    padding: 2rem;
+  }
+  .main-details {
+    &--date,
+    &--day {
+      font-size: 2rem;
+      font-weight: 400;
+    }
+    &--time {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 2rem;
+    }
+  }
+
+  .temp {
+    &--degree {
+      font-size: 3rem;
+      font-weight: 700;
+    }
+    &--scale {
+      margin-left: 5px;
+      font-size: 2rem;
+    }
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .container {
+    min-width: 15rem;
+    // padding: 1rem;
+  }
+}
