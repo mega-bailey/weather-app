@@ -236,7 +236,6 @@ body {
       margin-bottom: 2rem;
     }
   }
-
   .temp {
     &--degree {
       font-size: 3rem;
@@ -251,7 +250,12 @@ body {
 
 @media only screen and (max-width: 375px) {
   .container {
-    min-width: 10rem;
-    padding: 5px;
+    min-width: 8rem;
+    padding: 2px;
+  }
+  .main-details {
+    &--container {
+      margin: 1rem;
+    }
   }
 }
