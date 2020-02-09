@@ -251,11 +251,21 @@ body {
 @media only screen and (max-width: 375px) {
   .container {
     min-width: 8rem;
-    padding: 2px;
+    padding: 0;
   }
   .main-details {
     &--container {
       margin: 1rem;
     }
+  }
+  .add-details {
+    &--container {
+      padding: 1rem;
+    }
+  }
+  .main-icon > img {
+    height: 5rem;
+    width: 5rem;
+    margin-bottom: 1rem;
   }
 }
