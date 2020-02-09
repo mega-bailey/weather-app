@@ -21,20 +21,43 @@
 
       <div class="main-details--container">
         <div class="main-details__left">
-          <p class="date">Date</p>
-          <p class="time">Time</p>
-          <p class="temp--desc">Very cold</p>
+          <h2 class="main-details--day">Day</h2>
+          <h2 class="main-details--date">Date</h2>
+          <h2 class="main-details--time">Time</h2>
+          <div class="main-details--inside-container">
+            <h3 class="main-details--sunrise">
+              <img
+                src="icons/sunrise.svg"
+                alt="sunrise icon"
+                class="sun-icon"
+              />
+              Sunrise: <span class="main-details--sunriseTime">6am</span>
+            </h3>
+          </div>
+          <div class="main-details--inside-container">
+            <h3 class="main-details--sunset">
+              <img src="icons/sunset.svg" alt="sunset icon" class="sun-icon" />
+              Sunset: <span class="main-details--sunriseTime">6pm</span>
+            </h3>
+          </div>
         </div>
         <div class="main-details__right">
           <!-- <canvas class="icon" width="90" height="90"></canvas> -->
-          <div class="icon">
-            <img
-              src="icons/weathercock.svg"
-              alt="weathervane"
-            />
+
+          <img
+            src="icons/weathercock.svg"
+            alt="weathervane icon"
+            class="main-icon"
+          />
+
+          <div class="temp--container">
+            <h2 class="temp--degree">34</h2>
+            <span class="temp--scale">˚F</span>
           </div>
-          <h2 class="temp--degree">34</h2>
-          <span class="temp--scale">˚F</span>
+          <h4 class="temp--feels-like">
+            Feels like: <span class="temp--apparent-temp"></span>
+          </h4>
+          <h4 class="temp--desc">Very cold</h4>
         </div>
       </div>
 
@@ -44,10 +67,38 @@
       </div> -->
 
       <div class="add-details--container">
-        <div class="add-details__wind">Wind:</div>
-        <div class="add-details__humidity">Humidity:</div>
-        <div class="add-details__pressure">Pressure:</div>
-        <div class="add-details__uv">UV Index:</div>
+        <div class="add-details__column">
+          <img src="icons/wind.svg" alt="wind icon" class="add-details__icon" />
+          <h4 class="add-details__title">Wind</h4>
+          <h5 class="add-details__data">data</h5>
+        </div>
+        <div class="add-details__column">
+          <img
+            src="icons/uv.svg"
+            alt="uv-index icon"
+            class="add-details__icon"
+          />
+          <h4 class="add-details__title">UV Index</h4>
+          <h5 class="add-details__data">data</h5>
+        </div>
+        <div class="add-details__column">
+          <img
+            src="icons/pressure.svg"
+            alt="pressure icon"
+            class="add-details__icon"
+          />
+          <h4 class="add-details__title">Pressure</h4>
+          <h5 class="add-details__data">data</h5>
+        </div>
+        <div class="add-details__column">
+          <img
+            src="icons/humidity.svg"
+            alt="humidity icon"
+            class="add-details__icon"
+          />
+          <h4 class="add-details__title">Humidity</h4>
+          <h5 class="add-details__data">data</h5>
+        </div>
       </div>
     </div>
     <div class="attribute">
@@ -60,7 +111,6 @@
       from
       <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
     </div>
-    <script src="skycons.js"></script>
     <script src="app.js"></script>
   </body>
 </html>

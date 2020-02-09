@@ -7,6 +7,8 @@ window.addEventListener('load', () => {
   const tempSection = document.querySelector('.temp--container');
   const tempScale = document.querySelector('.temp--scale');
   const tempBtn = document.querySelector('.temp-btn');
+  const feelsLike = document.querySelector('.temp--apparent-temp');
+  const mainIcon = document.querySelector('.main-icon');
 
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(position => {
@@ -21,11 +23,21 @@ window.addEventListener('load', () => {
         })
         .then(data => {
           console.log(data);
-          const { temperature, summary, icon } = data.currently;
+          const {
+            temperature,
+            summary,
+            apparentTemperature,
+            icon
+          } = data.currently;
+          console.log(icon);
+          const { sunriseTime, sunsetTime } = data.daily.data[0];
+          console.log(sunriseTime, sunsetTime);
           const timezone = data.timezone.replace(/_/g, ' ');
 
+          mainIcon.textContent = icon;
           locationTimezone.textContent = timezone;
           tempDesc.textContent = summary;
+          feelsLike.textContent = apparentTemperature;
           tempDegree.textContent = Math.round(temperature);
           let celcius = (temperature - 32) * (5 / 9);
 
@@ -57,4 +69,51 @@ window.addEventListener('load', () => {
 const iconElement = document.querySelector('.icon');
 function displayIcon() {
   iconElement.innerHTML = `<img src="icons/${weather.iconId}.png"/>`;
+}
+
+const currentDay = document.querySelector('.main-details--day');
+const currentDate = document.querySelector('.main-details--date');
+const currentTime = document.querySelector('.main-details--time');
+
+const days = [
+  'Sunday',
+  'Monday',
+  'Tuesday',
+  'Wednesday',
+  'Thursday',
+  'Friday',
+  'Saturday'
+];
+const months = [
+  'January',
+  'February',
+  'March',
+  'April',
+  'May',
+  'June',
+  'July',
+  'August',
+  'September',
+  'October',
+  'November',
+  'December'
+];
+
+const numDay = new Date().getDate();
+const month = new Date().getMonth();
+const monthDay = new Date().getDay();
+const year = new Date().getFullYear();
+const currentMonth = months[month];
+const weekday = days[monthDay];
+const hours = new Date().getHours();
+const minutes = new Date().getMinutes();
+
+currentDay.innerHTML = `${weekday}`;
+currentDate.innerHTML = `${currentMonth} ${numDay}, ${year}`;
+
+//TIME
+var time = setInterval(getTime, 1000);
+function getTime() {
+  var date = new Date();
+  currentTime.innerHTML = date.toLocaleTimeString();
 }
