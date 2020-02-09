@@ -16,7 +16,7 @@
     <div class="container">
       <div class="header">
         <h1 class="location--timezone">Timezone</h1>
-        <span class="temp-btn">˚Far | ˚Cel</span>
+        <span class="temp-btn">˚F | ˚C</span>
       </div>
 
       <div class="main-details--container">
@@ -24,31 +24,31 @@
           <h2 class="main-details--day">Day</h2>
           <h2 class="main-details--date">Date</h2>
           <h2 class="main-details--time">Time</h2>
-          <div class="main-details--inside-container">
-            <h3 class="main-details--sunrise">
-              <img
-                src="icons/sunrise.svg"
-                alt="sunrise icon"
-                class="sun-icon"
-              />
-              Sunrise: <span class="main-details--sunriseTime">6am</span>
-            </h3>
-          </div>
-          <div class="main-details--inside-container">
-            <h3 class="main-details--sunset">
-              <img src="icons/sunset.svg" alt="sunset icon" class="sun-icon" />
-              Sunset: <span class="main-details--sunriseTime">6pm</span>
-            </h3>
-          </div>
+          <!-- <div class="main-details--inside-container"> -->
+          <h3 class="main-details--sunrise-set">
+            <img
+              src="icons/sunrise.svg"
+              alt="sunrise icon"
+              class="sunrise-set-icon"
+            />
+            <span class="main-details--sunriseTime"> 6am</span>
+          </h3>
+          <!-- </div> -->
+          <!-- <div class="main-details--inside-container"> -->
+          <h3 class="main-details--sunrise-set">
+            <img
+              src="icons/sunset.svg"
+              alt="sunset icon"
+              class="sunrise-set-icon"
+            />
+            <span class="main-details--sunsetTime"> 6pm</span>
+          </h3>
+          <!-- </div> -->
         </div>
         <div class="main-details__right">
-          <!-- <canvas class="icon" width="90" height="90"></canvas> -->
-
-          <img
-            src="icons/weathercock.svg"
-            alt="weathervane icon"
-            class="main-icon"
-          />
+          <div class="main-icon">
+            <img src="icons/weathercock.svg" alt="weathervane icon" />
+          </div>
 
           <div class="temp--container">
             <h2 class="temp--degree">34</h2>
@@ -60,11 +60,6 @@
           <h4 class="temp--desc">Very cold</h4>
         </div>
       </div>
-
-      <!-- <div class="desc-container">
-        <canvas class="icon" width="90" height="90"></canvas>
-        <div class="temp--desc">Very cold</div>
-      </div> -->
 
       <div class="add-details--container">
         <div class="add-details__column">

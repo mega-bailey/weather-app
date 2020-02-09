@@ -64,7 +64,8 @@ body {
 .location {
   &--timezone {
     font-size: 1.8rem;
-    font-weight: 300;
+    font-weight: 400;
+    color: $dark-grey;
   }
 }
 
@@ -78,10 +79,14 @@ body {
     display: flex;
     flex-direction: column;
   }
-  &--inside-container {
+  &--sunrise-set {
     display: flex;
     align-items: center;
-    padding: 1rem 0;
+    padding: 5px 0;
+    color: $dark-grey;
+    font-size: 1.5rem;
+    font-weight: 400;
+    letter-spacing: 0.5px;
   }
   &--date,
   &--day {
@@ -89,9 +94,9 @@ body {
     font-weight: 400;
   }
   &--time {
-    padding-top: 1rem;
-    font-size: 4rem;
+    font-size: 5rem;
     font-weight: 700;
+    margin-bottom: 2rem;
   }
   &__right {
     display: flex;
@@ -100,10 +105,17 @@ body {
     padding-right: 3rem;
   }
 }
-.main-icon {
+
+.sunrise-set-icon {
+  height: 2.5rem;
+  width: 2.5rem;
+  margin-right: 1rem;
+}
+
+.main-icon > img {
   height: 6rem;
   width: 6rem;
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
 }
 
 .temp {
@@ -112,7 +124,6 @@ body {
     align-items: center;
   }
   &--degree {
-    font-weight: normal;
     font-size: 5rem;
     font-weight: 700;
   }
@@ -120,20 +131,29 @@ body {
     margin-left: 5px;
     font-size: 3rem;
   }
+  &--feels-like {
+    font-weight: 300;
+    color: $dark-grey;
+    font-size: 1.5rem;
+    letter-spacing: 0.5px;
+    padding: 5px 0;
+  }
   &--desc {
     font-weight: 400;
     color: $dark-grey;
     font-size: 2rem;
-    letter-spacing: 0;
+    letter-spacing: 0.5px;
   }
 }
 
 .add-details {
   &--container {
+    background: rgba($color-white, 0.1);
+    border-radius: 5px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem;
+    padding: 2rem;
   }
   &__column {
     display: flex;
@@ -153,8 +173,8 @@ body {
   &__data {
     font-weight: 400;
     color: $dark-grey;
-    font-size: 1.3rem;
-    letter-spacing: 0;
+    font-size: 1.5rem;
+    letter-spacing: 0.5px;
   }
 }
 
@@ -162,9 +182,4 @@ body {
   padding: 1rem;
   position: fixed;
   bottom: 0;
-}
-
-.sun-icon {
-  height: 2rem;
-  width: 2rem;
 }

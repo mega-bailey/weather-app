@@ -4,11 +4,12 @@ window.addEventListener('load', () => {
   const tempDesc = document.querySelector('.temp--desc');
   const tempDegree = document.querySelector('.temp--degree');
   const locationTimezone = document.querySelector('.location--timezone');
-  const tempSection = document.querySelector('.temp--container');
   const tempScale = document.querySelector('.temp--scale');
   const tempBtn = document.querySelector('.temp-btn');
   const feelsLike = document.querySelector('.temp--apparent-temp');
   const mainIcon = document.querySelector('.main-icon');
+  const sunrise = document.querySelector('.main-details--sunriseTime');
+  const sunset = document.querySelector('.main-details--sunsetTime');
 
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(position => {
@@ -29,19 +30,30 @@ window.addEventListener('load', () => {
             apparentTemperature,
             icon
           } = data.currently;
-          console.log(icon);
           const { sunriseTime, sunsetTime } = data.daily.data[0];
-          console.log(sunriseTime, sunsetTime);
-          const timezone = data.timezone.replace(/_/g, ' ');
+          const sunriseDate = new Date(sunriseTime * 1000);
+          const sunsetDate = new Date(sunsetTime * 1000);
+          const sunriseHours = sunriseDate.getHours();
+          const sunsetHours = sunsetDate.getHours() - 12;
+          const sunriseMinutes = sunriseDate.getMinutes();
+          const sunsetMinutes = sunsetDate.getMinutes();
+          const formattedSunrise = `${sunriseHours}:${sunriseMinutes} AM`;
+          const formattedSunset = `${sunsetHours}:${sunsetMinutes} PM`;
+          console.log(formattedSunrise, formattedSunset);
 
-          mainIcon.textContent = icon;
+          sunrise.textContent = formattedSunrise;
+          sunset.textContent = formattedSunset;
+
+          const timezone = data.timezone
+            .replace(/\//g, ', ')
+            .replace(/_/g, ' ');
+
+          mainIcon.innerHTML = `<img src="icons/${icon}.svg"/>`;
           locationTimezone.textContent = timezone;
           tempDesc.textContent = summary;
-          feelsLike.textContent = apparentTemperature;
+          feelsLike.textContent = Math.round(apparentTemperature);
           tempDegree.textContent = Math.round(temperature);
           let celcius = (temperature - 32) * (5 / 9);
-
-          //   setIcons(icon, document.querySelector('.icon'));
 
           tempBtn.addEventListener('click', () => {
             if (tempScale.textContent === '˚F') {
@@ -57,23 +69,7 @@ window.addEventListener('load', () => {
   } else {
     h1.textContent = 'Your browser is not allowing geolocation access';
   }
-
-  //  function setIcons(icon, iconID) {
-  //     const skycons = new Skycons({ color: 'white' });
-  //     const currentIcon = icon.replace(/-/g, '_').toUpperCase();
-  //     skycons.play();
-  //     return skycons.set(iconID, Skycons[currentIcon]);
-  //   }
 });
-
-const iconElement = document.querySelector('.icon');
-function displayIcon() {
-  iconElement.innerHTML = `<img src="icons/${weather.iconId}.png"/>`;
-}
-
-const currentDay = document.querySelector('.main-details--day');
-const currentDate = document.querySelector('.main-details--date');
-const currentTime = document.querySelector('.main-details--time');
 
 const days = [
   'Sunday',
@@ -105,8 +101,10 @@ const monthDay = new Date().getDay();
 const year = new Date().getFullYear();
 const currentMonth = months[month];
 const weekday = days[monthDay];
-const hours = new Date().getHours();
-const minutes = new Date().getMinutes();
+
+const currentDay = document.querySelector('.main-details--day');
+const currentDate = document.querySelector('.main-details--date');
+const currentTime = document.querySelector('.main-details--time');
 
 currentDay.innerHTML = `${weekday}`;
 currentDate.innerHTML = `${currentMonth} ${numDay}, ${year}`;
@@ -115,5 +113,5 @@ currentDate.innerHTML = `${currentMonth} ${numDay}, ${year}`;
 var time = setInterval(getTime, 1000);
 function getTime() {
   var date = new Date();
-  currentTime.innerHTML = date.toLocaleTimeString();
+  currentTime.innerHTML = date.toLocaleTimeString().replace(/:\d{2}\s/, ' ');
 }
