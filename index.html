@@ -24,7 +24,7 @@
           <h2 class="main-details--day">Day</h2>
           <h2 class="main-details--date">Date</h2>
           <h2 class="main-details--time">Time</h2>
-          <!-- <div class="main-details--inside-container"> -->
+
           <h3 class="main-details--sunrise-set">
             <img
               src="icons/sunrise.svg"
@@ -33,8 +33,7 @@
             />
             <span class="main-details--sunriseTime"> 6am</span>
           </h3>
-          <!-- </div> -->
-          <!-- <div class="main-details--inside-container"> -->
+
           <h3 class="main-details--sunrise-set">
             <img
               src="icons/sunset.svg"
@@ -65,7 +64,7 @@
         <div class="add-details__column">
           <img src="icons/wind.svg" alt="wind icon" class="add-details__icon" />
           <h4 class="add-details__title">Wind</h4>
-          <h5 class="add-details__data">data</h5>
+          <h5 class="add-details__data wind-data">data</h5>
         </div>
         <div class="add-details__column">
           <img
@@ -74,7 +73,7 @@
             class="add-details__icon"
           />
           <h4 class="add-details__title">UV Index</h4>
-          <h5 class="add-details__data">data</h5>
+          <h5 class="add-details__data uv-index-data">data</h5>
         </div>
         <div class="add-details__column">
           <img
@@ -83,7 +82,7 @@
             class="add-details__icon"
           />
           <h4 class="add-details__title">Pressure</h4>
-          <h5 class="add-details__data">data</h5>
+          <h5 class="add-details__data pressure-data">data</h5>
         </div>
         <div class="add-details__column">
           <img
@@ -92,19 +91,30 @@
             class="add-details__icon"
           />
           <h4 class="add-details__title">Humidity</h4>
-          <h5 class="add-details__data">data</h5>
+          <h5 class="add-details__data humidity-data">data</h5>
         </div>
       </div>
     </div>
-    <div class="attribute">
+    <div class="attribute attribute__darksky">
+      <a href="https://darksky.net/poweredby" class="attribute__link"
+        >Powered by Dark Sky</a
+      >
+    </div>
+    <div class="attribute attribute__icons">
       Icons made by
       <a
         href="https://www.flaticon.com/authors/vitaly-gorbachev"
         title="Vitaly Gorbachev"
+        class="attribute__link"
         >Vitaly Gorbachev</a
       >
       from
-      <a href="https://www.flaticon.com/" title="Flaticon">Flaticon</a>
+      <a
+        href="https://www.flaticon.com/"
+        class="attribute__link"
+        title="Flaticon"
+        >Flaticon</a
+      >
     </div>
     <script src="app.js"></script>
   </body>

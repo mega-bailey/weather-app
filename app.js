@@ -10,6 +10,10 @@ window.addEventListener('load', () => {
   const mainIcon = document.querySelector('.main-icon');
   const sunrise = document.querySelector('.main-details--sunriseTime');
   const sunset = document.querySelector('.main-details--sunsetTime');
+  const uvIndexData = document.querySelector('.uv-index-data');
+  const windData = document.querySelector('.wind-data');
+  const pressureData = document.querySelector('.pressure-data');
+  const humidityData = document.querySelector('.humidity-data');
 
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(position => {
@@ -28,9 +32,20 @@ window.addEventListener('load', () => {
             temperature,
             summary,
             apparentTemperature,
-            icon
+            icon,
+            uvIndex,
+            windSpeed,
+            pressure,
+            humidity
           } = data.currently;
-          const { sunriseTime, sunsetTime } = data.daily.data[0];
+          const weekday = new Date().getDay();
+          const { sunriseTime, sunsetTime } = data.daily.data[weekday];
+
+          uvIndexData.textContent = uvIndex;
+          windData.textContent = windSpeed;
+          pressureData.textContent = pressure;
+          humidityData.textContent = humidity;
+
           const sunriseDate = new Date(sunriseTime * 1000);
           const sunsetDate = new Date(sunsetTime * 1000);
           const sunriseHours = sunriseDate.getHours();
