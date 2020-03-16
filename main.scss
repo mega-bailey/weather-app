@@ -1,9 +1,3 @@
-$color-primary: #244577;
-$color-secondary: #1a75b3;
-$blue: rgb(5, 6, 53);
-$orange: rgb(238, 167, 69);
-$light-blue: rgb(91, 129, 243);
-$pink: rgb(245, 122, 143);
 $navy: #050c38;
 $color-white: #fff;
 $color-black: #000;
@@ -29,14 +23,11 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: $color-primary;
-  background-repeat: no-repeat;
+  background: $color-white;
   min-height: 100vh;
   width: 100%;
-  background: linear-gradient(45deg, $blue 0%, rgba($color-secondary, 0) 70%),
-    linear-gradient(135deg, $light-blue 10%, rgba($color-secondary, 0) 80%),
-    linear-gradient(225deg, rgba($pink, 1) 10%, rgba($color-secondary, 0) 80%),
-    linear-gradient(315deg, $orange 100%, rgba($color-secondary, 0) 70%);
+  background-image: -webkit-linear-gradient(to right bottom, #afe0ce, #519872);
+  background-image: linear-gradient(to right bottom, #afe0ce, #519872);
   background-repeat: no-repeat;
   background-attachment: fixed;
   font-family: $font-primary;
@@ -227,39 +218,9 @@ body {
     font-size: 43.75%;
   }
 }
-
-// @media only screen and (max-width: 375px) {
-//   .container {
-//     min-width: 20rem;
-//     padding: 2rem;
-//   }
-//   .main-details {
-//     &--date,
-//     &--day {
-//       font-size: 2rem;
-//       font-weight: 400;
-//     }
-//     &--time {
-//       font-size: 3rem;
-//       font-weight: 700;
-//       margin-bottom: 2rem;
-//     }
-//   }
-//   .temp {
-//     &--degree {
-//       font-size: 3rem;
-//       font-weight: 700;
-//     }
-//     &--scale {
-//       margin-left: 5px;
-//       font-size: 2rem;
-//     }
-//   }
-// }
-
 @media only screen and (max-width: 375px) {
   .container {
-    min-width: 6rem;
+    min-width: 4rem;
     padding: 0;
   }
   .main-details {
