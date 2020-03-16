@@ -3,6 +3,9 @@ $color-white: #fff;
 $color-black: #000;
 $dark-grey: #333;
 
+$color-primary: #bad8b1;
+$color-secondary: #3e59c6;
+
 $font-primary: 'Lato', sans-serif;
 
 *,
@@ -26,8 +29,16 @@ body {
   background: $color-white;
   min-height: 100vh;
   width: 100%;
-  background-image: -webkit-linear-gradient(to right bottom, #afe0ce, #519872);
-  background-image: linear-gradient(to right bottom, #afe0ce, #519872);
+  background-image: -webkit-linear-gradient(
+    to right top,
+    $color-secondary,
+    $color-primary
+  );
+  background-image: linear-gradient(
+    to right top,
+    $color-secondary,
+    $color-primary
+  );
   background-repeat: no-repeat;
   background-attachment: fixed;
   font-family: $font-primary;
